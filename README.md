@@ -37,3 +37,11 @@ Here we handle all service requests in the `prod` and `stage` federations.
     forward . 192.168.1.12
 }
 ~~~
+
+## Note
+
+This plugin was from github.com/coredns/coredns/plugin/federation through
+the following command so that commit history could be preserved:
+```
+git filter-branch --subdirectory-filter plugin/federation -- --all
+```
