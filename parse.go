@@ -1,10 +1,22 @@
 package federation
 
 import (
+	"errors"
+
 	"github.com/coredns/coredns/plugin/pkg/dnsutil"
 	"github.com/coredns/coredns/request"
 
 	"github.com/miekg/dns"
+)
+const (
+        // Svc is the DNS schema for kubernetes services
+        Svc = "svc"
+        // Pod is the DNS schema for kubernetes pods
+        Pod = "pod"
+)
+
+var (
+        errInvalidRequest = errors.New("invalid query name")
 )
 
 type recordRequest struct {
