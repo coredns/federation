@@ -26,7 +26,7 @@ const (
 // Federations is used from the federations plugin to return the service that should be
 // returned as a CNAME for federation(s) to work.
 func (f *Federation) FederationsFunc(state request.Request, fname, fzone string) (msg.Service, error) {
-	nodeName := f.k.localNodeName()
+	nodeName := f.k.LocalNodeName()
 	node, err := f.k.APIConn.GetNodeByName(nodeName)
 	if err != nil {
 		return msg.Service{}, err
