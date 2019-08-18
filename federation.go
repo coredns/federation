@@ -18,6 +18,7 @@ import (
 
 	"github.com/coredns/coredns/plugin"
 	"github.com/coredns/coredns/plugin/etcd/msg"
+	"github.com/coredns/coredns/plugin/kubernetes"
 	"github.com/coredns/coredns/plugin/pkg/dnsutil"
 	"github.com/coredns/coredns/plugin/pkg/nonwriter"
 	"github.com/coredns/coredns/plugin/pkg/upstream"
@@ -34,6 +35,7 @@ type Federation struct {
 
 	Next        plugin.Handler
 	Federations Func
+	k           *kubernetes.Kubernetes
 }
 
 // Func needs to be implemented by any plugin that implements

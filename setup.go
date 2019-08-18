@@ -32,7 +32,8 @@ func setup(c *caddy.Controller) error {
 			return nil
 		}
 		if x, ok := m.(*kubernetes.Kubernetes); ok {
-			fed.Federations = x.Federations
+			fed.k = x
+			fed.Federations = fed.FederationsFunc
 		}
 		return nil
 	})
