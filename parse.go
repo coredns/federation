@@ -1,4 +1,4 @@
-package kubernetes
+package federation
 
 import (
 	"github.com/coredns/coredns/plugin/pkg/dnsutil"
